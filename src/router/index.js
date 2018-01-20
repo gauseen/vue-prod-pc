@@ -33,9 +33,6 @@ export const routes = [
 		path: '*',
 		name: '404',
 		component: resolve => require(['../pages/not-found/index.vue'], resolve),
-		children: [
-
-		],
 	},
 ]
 
