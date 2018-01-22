@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App'
+import store from './store'
 import router from './router'
 import iView from 'iview'
 import Fetch from 'src/common/fetch'
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
+	store,
 	router,
 	template: '<App/>',
 	components: { App },

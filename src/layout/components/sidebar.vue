@@ -5,20 +5,21 @@
 
 				<Submenu v-if="item.children.length > 1" :name="item.name">
 					<template slot="title">
-						<Icon type="ios-navigate"></Icon>
-						{{item.name}}
+						<Icon :type="item.icon"></Icon>
+						{{item.title}}
 					</template>
 					<template v-for="child in item.children">
 						<MenuItem :name="child.name">
-							{{child.name}}
+							<Icon :type="child.icon"></Icon>
+							{{child.title}}
 						</MenuItem>
 					</template>
 				</Submenu>
 
 				<template v-if="item.children.length <= 1" v-for="child in item.children">
 					<MenuItem :name="child.name">
-						<Icon type="ios-navigate"></Icon>
-						<span>{{child.name}}</span>
+						<Icon :type="item.icon"></Icon>
+						<span>{{child.title}}</span>
 					</MenuItem>
 				</template>
 

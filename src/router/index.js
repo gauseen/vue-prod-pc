@@ -2,26 +2,32 @@ import Router from 'vue-router'
 import Layout from '../layout/layout'
 const serverDir = process.env.SERVER_DIR
 
+// 不需要再layout组件显示路由配置，也不在侧边导航显示
 const config = [
 	{ path: '/login', name: 'login' },	
 ]
 
+// layout组件中要显示的路由，并在侧边导航栏显示
 export const layoutRoutes = [
 	{
 		path: '/one',
 		name: 'item-01',
+		icon: 'key',
+		title: '第一组',
 		component: Layout,
 		children: [
-			{ path: 'home', name: 'home' },
+			{ path: 'home', name: 'home', icon: 'compose', title: '第一子', },
 		],
 	},
 	{
 		path: '/two',
 		name: 'item-02',
+		icon: 'earth',
+		title: '第二组',
 		component: Layout,
 		children: [
-			{ path: 'goods', name: 'goods' },
-			{ path: 'modal', name: 'modal' },
+			{ path: 'goods', name: 'goods', icon: 'crop', title: '第一子', },
+			{ path: 'modal', name: 'modal', icon: 'ios-more', title: '第二子', },
 		],
 	},
 ]
