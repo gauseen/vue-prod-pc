@@ -43,15 +43,27 @@
 			}
 		},
 		mounted () {
-			
+			console.log('this.currentName', this.currentName)
+			// this.setCurrentPath(this.currentName)
 		},
 		methods: {
 			changeMenu (sideMenuName) {
+				// 设置当前路径（用于面包屑导航显示）
+				this.setCurrentPath(sideMenuName)
+				// 跳转当前路径
 				this.$router.push({
 					name: sideMenuName
 				})
-			}
-		}
+			},
+			setCurrentPath (toName) {
+				this.$store.commit('setCurrentPath', toName)
+			},
+		},
+		computed: {
+			currentName () {
+				return this.$route.name
+			},
+		},
 	}
 </script>
 
