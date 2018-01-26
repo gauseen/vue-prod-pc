@@ -7,10 +7,10 @@ const mutations = {
 	initRoutes2Paths (state) {
 		var layoutRoutes = state.layoutRoutes
 		// 列出 layoutRoutes 路由组合路径的所有情况
-		var resultList = [];
-		parseTree([], layoutRoutes);
-		function parseTree(source, children){
-			if(!children){
+		var resultList = []
+		parseTree([], layoutRoutes)
+		function parseTree (source, children) {
+			if (!children) {
 				resultList.push(source)
 				return
 			}
@@ -24,7 +24,7 @@ const mutations = {
 					name: e.name,
 					title: e.title,
 				}])
-				parseTree(nameArr, e.children);
+				parseTree(nameArr, e.children)
 			})
 		}
 		state.layoutAllPaths = resultList

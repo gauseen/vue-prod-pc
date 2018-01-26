@@ -29,7 +29,7 @@ export default {
 		...mapState({
 			count: state => state.home.count,	// home 模块
 			sigin: state => state.sigin,		// 根级 state
-		})
+		}),
 	},
 }
 </script>

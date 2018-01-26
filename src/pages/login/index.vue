@@ -22,7 +22,6 @@ export default {
 			phone: '',
 			code: '',
 		}
-		
 	},
 	mounted () {
 
@@ -49,7 +48,6 @@ export default {
 			}
 			this.$post(`toFindSmsCode.do`, params)
 			.then(res => {
-				
 			})
 		},
 	},

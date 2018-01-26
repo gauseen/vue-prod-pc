@@ -6,7 +6,7 @@ const app = {
 	},
 	mutations: {},
 	actions: {},
-	getters: {}
+	getters: {},
 }
 
 export default app

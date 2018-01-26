@@ -41,8 +41,8 @@ export default {
 	watch: {
 		$route () {
 			this.currentPath = this.$store.state.getCurrentPaths
-		}
-	}
+		},
+	},
 
 }
 </script>

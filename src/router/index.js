@@ -1,10 +1,10 @@
 import Router from 'vue-router'
 import Layout from '../layout/layout'
-const serverDir = process.env.SERVER_DIR
+// const serverDir = process.env.SERVER_DIR
 
 // 不需要再layout组件显示路由配置，也不在侧边导航显示
 const config = [
-	{ path: '/login', name: 'login' },	
+	{ path: '/login', name: 'login' },
 ]
 
 // layout组件中要显示的路由，并在侧边导航栏显示
@@ -16,7 +16,7 @@ export const layoutRoutes = [
 		title: '第一组',
 		component: Layout,
 		children: [
-			{ path: 'home', name: 'home', icon: 'compose', title: '第一子', },
+			{ path: 'home', name: 'home', icon: 'compose', title: '第一子' },
 		],
 	},
 	{
@@ -26,8 +26,8 @@ export const layoutRoutes = [
 		title: '第二组',
 		component: Layout,
 		children: [
-			{ path: 'goods', name: 'goods', icon: 'crop', title: '第一子', },
-			{ path: 'modal', name: 'modal', icon: 'ios-more', title: '第二子', },
+			{ path: 'goods', name: 'goods', icon: 'crop', title: '第一子' },
+			{ path: 'modal', name: 'modal', icon: 'ios-more', title: '第二子' },
 		],
 	},
 ]
@@ -57,12 +57,14 @@ function parseRouter (items) {
 }
 
 // 获取相应的组件
-function requireComponent(item) {
+function requireComponent (item) {
 	if (item.component) {
 		return item.component
 	} else {
-		return /^\/.+$/g.test(item.path) ? resolve => require([`../pages${item.path}/index.vue`], resolve)
-										 : resolve => require([`../pages/${item.path}/index.vue`], resolve)
+		let component = /^\/.+$/g.test(item.path)
+			? resolve => require([`../pages${item.path}/index.vue`], resolve)
+			: resolve => require([`../pages/${item.path}/index.vue`], resolve)
+		return component
 	}
 }
 
