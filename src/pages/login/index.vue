@@ -1,7 +1,7 @@
 <template>
   <div class="login__content">
-		<h3>login page ...</h3>
-		<h4>test ...</h4>
+		<h3>全局stylus变量测试</h3>
+		<h4>外部引用stylus变量测试</h4>
 		<!-- <img :src="skinImg" alt=""> -->
 		<Input v-model="phone" placeholder="phone..." style="width: 350px"></Input>
 		<p></p>
@@ -23,6 +23,7 @@ export default {
 			code: '',
 		}
 	},
+
 	mounted () {
 
 	},
@@ -56,7 +57,9 @@ export default {
 
 <style lang="stylus" scoped>
 	@import 'src/stylus/test'
-	div
+	.login__content
+		text-align center
+		padding-top 100px
 		font-size 28px
 		color $color-main
 		img

@@ -28,11 +28,17 @@ export const layoutRoutes = [
 		children: [
 			{ path: 'goods', name: 'goods', icon: 'crop', title: '第一子' },
 			{ path: 'modal', name: 'modal', icon: 'ios-more', title: '第二子' },
+			{ path: 'user', name: 'user', icon: 'admin', title: '用户管理' },
 		],
 	},
 ]
 
 export const routes = [
+	{
+		path: '/',
+		redirect: '/login',
+		name: '',
+	},
 	...parseRouter(layoutRoutes),
 	...parseRouter(config),
 	{
